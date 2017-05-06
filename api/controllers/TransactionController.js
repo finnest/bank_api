@@ -34,7 +34,7 @@ module.exports = {
 
 	withdraw: function(req, res, next) {
 		var accountNumber = req.param('accountNumber');
-		var amount = req.param('amount');
+		var amount = parseFloat(req.param('amount'));
 		var description = req.param('description') || '';
 
 		Account.findOne({number: accountNumber})
@@ -67,11 +67,11 @@ module.exports = {
 	transfer: function(req, res, next) {
 		var to = req.param('to');
 		var from = req.param('from');
-		var amount = req.param('amount');
+		var amount = parseFloat(req.param('amount'));
 
-		Account.findOne({number: req.from})
+		Account.findOne({number: from})
 			.then(function(sender) {
-				Account.findOne({number: req.to})
+				Account.findOne({number: to})
 					.then(function(recipient) {
 
 						Transfer.create({
