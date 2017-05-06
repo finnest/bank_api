@@ -12,13 +12,13 @@
 
 module.exports = {
 
-  /***************************************************************************
-   * Set the default database connection for models in the development       *
-   * environment (see config/connections.js and config/models.js )           *
-   ***************************************************************************/
+  models: {
+    connection: 'mysql',
+    migrate: 'alter'
+  },
 
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
+  cors: {
+    origin: 'http://localhost:1337'
+  }
 
 };
