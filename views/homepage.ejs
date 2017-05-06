@@ -1,0 +1,23 @@
+<h3>DEPOSIT</h3>
+<form action="/transaction/deposit">
+  Account Number: <input type="text" name="accountNumber"><br>
+  Amount: <input type="text" name="amount"><br>
+  <input type='hidden' name='type' value='DEPOSIT'>
+  <input type='submit'>
+</form>
+
+<h3>WITHDRAW</h3>
+<form action="/transaction/withdraw">
+  Account Number: <input type="text" name="accountNumber"><br>
+  Amount: <input type="text" name="amount"><br>
+  <input type='hidden' name='type' value='WITHDRAWAL'>
+  <input type='submit'>
+</form>
+
+<h3>TRANSFER</h3>
+<form action="/transaction/transfer">
+  From (Account Number): <input type="text" name="from"><br>
+  To (Account Number): <input type="text" name="to"><br>
+  Amount: <input type="text" name="amount"><br>
+  <input type='submit'>
+</form>
