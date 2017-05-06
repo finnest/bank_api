@@ -22,10 +22,12 @@
   <input type='submit'>
 </form>
 
-<h3>TRANSFER</h3>
-<form action="/transaction/transfer">
-  From (Account Number): <input type="text" name="from"><br>
-  To (Account Number): <input type="text" name="to"><br>
+<h3>POS</h3>
+<form action="/transaction/pos">
+  Card Number: <input type="text" name="cardNumber"><br>
+  Expiration Month: <input type="text" name="cardExpirationMonth"><br>
+  Expiration Year: <input type="text" name="cardExpirationYear"><br>
   Amount: <input type="text" name="amount"><br>
+  <input type='hidden' name='merchantCode' value="1234">
   <input type='submit'>
 </form>

@@ -109,6 +109,23 @@ module.exports = {
 	},
 
 	pos: function(req, res, next) {
+		var cardNumber = req.param('cardNumber');
+		var cardExpirationMonth = parseInt(req.param('cardExpirationMonth'));
+		var cardExpirationYear = parseInt(req.param('cardExpirationYear'));
+		var amount = parseFloat(req.param('amount'));
 
+		DebitCard.findOne({cardNumber:cardNumber})
+			.populate('account')
+			.then(function(debitCard) {
+				var updatedBalance = debitCard.account.balance - amount;
+				Account.update({number:debitCard.account.number},{balance:updatedBalance})
+					.then(function(updated) {
+						res.json({
+							account: updated[0]
+						});
+					})
+					.catch(function(err) {return next(err)});
+			})
+			.catch(function(err) {return next(err)});
 	}
 };

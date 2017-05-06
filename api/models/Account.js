@@ -18,6 +18,11 @@ module.exports = {
     balance: {
       type: 'float',
       defaultsTo: 0.00
+    },
+
+    debitCards: {
+      collection: 'debitCard',
+      via: 'account'
     }
   }
 };
