@@ -1,11 +1,10 @@
 module.exports = {
 	deposit: function(req, res, next) {
-		var accountNumber = req.param('accountNumber');
-		var amount = parseFloat(req.param('amount'));
-		var balance = req.param('balance');
-		var description = req.param('description') || '';
+		var email = req.body.email;
+		var amount = parseFloat(req.body.amount);
+		var description = req.body.description;
 
-		Account.findOne({number: accountNumber})
+		Account.findOne({email: email})
 			.then(function(account) {
 				var updatedBalance = amount + account.balance;
 

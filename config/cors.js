@@ -27,6 +27,8 @@
  */
 
 module.exports.cors = {
+  allRoutes: true,
+  origin: 'http://localhost:1337'
 
   /***************************************************************************
   *                                                                          *

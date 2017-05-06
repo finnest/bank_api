@@ -1,0 +1,60 @@
+<div id='left'>
+  <h3>CREATE ACCOUNT</h3>
+  <form action="/account/create" method="POST">
+    Email: <input type="text" name="email"><br>
+    Type:
+    <select name='type'>
+      <option value="CHECKING">CHECKING</option>
+      <option value="SAVINGS">SAVINGS</option>
+    </select><br>
+    Starting Balance: <input type="text" name="balance"><br>
+    <input type='submit'>
+  </form>
+
+  <h3>DEPOSIT</h3>
+  <form action="/transaction/deposit">
+    Email: <input type="text" name="email"><br>
+    Amount: <input type="text" name="amount"><br>
+    <input type='submit'>
+  </form>
+
+  <h3>WITHDRAW</h3>
+  <form action="/transaction/withdraw">
+    Account Number: <input type="text" name="accountNumber"><br>
+    Amount: <input type="text" name="amount"><br>
+    <input type='hidden' name='type' value='WITHDRAWAL'>
+    <input type='submit'>
+  </form>
+
+  <h3>TRANSFER</h3>
+  <form action="/transaction/transfer">
+    From (Account Number): <input type="text" name="from"><br>
+    To (Account Number): <input type="text" name="to"><br>
+    Amount: <input type="text" name="amount"><br>
+    <input type='submit'>
+  </form>
+
+  <h3>POS</h3>
+  <form action="/transaction/pos">
+    Card Number: <input type="text" name="cardNumber"><br>
+    Expiration Month: <input type="text" name="cardExpirationMonth"><br>
+    Expiration Year: <input type="text" name="cardExpirationYear"><br>
+    Amount: <input type="text" name="amount"><br>
+    <input type='hidden' name='merchantCode' value="1234">
+    <input type='submit'>
+  </form>
+</div>
+
+<div id='right'>
+  <h2>ACCOUNTS FROM DB</h2>
+  <% accounts.forEach(function(account) { %>
+  <ul>
+    <% Object.keys(account).forEach(function(attr) { %>
+      <li>
+        <span style='font-weight: bold;'><%= attr %></span>
+        <span><%= account[attr] %></span>
+      </li>
+    <% }) %>
+  </ul>
+  <% }) %>
+</div>
