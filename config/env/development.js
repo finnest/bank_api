@@ -17,8 +17,10 @@ module.exports = {
     migrate: 'alter'
   },
 
+  port: 3000,
+
   cors: {
-    origin: 'http://localhost:1337'
+    origin: 'http://localhost:3000'
   }
 
 };
