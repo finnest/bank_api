@@ -21,4 +21,5 @@ module.exports = {
     origin: 'http://localhost:1337'
   }
 
+
 };
