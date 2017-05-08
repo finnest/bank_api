@@ -20,7 +20,7 @@ recur(0, 470625158828918); //lisa savings
 
 function recur(i, number){
   console.log(i);
-  if(i===100){
+  if(i===25){
     return;
   }
   var q = "SELECT * FROM account WHERE number ="+ number;
@@ -31,7 +31,7 @@ function recur(i, number){
         console.log(" account not found");
       }else{
         var balance = result[0].balance;
-        var amount = faker.random.number({min:-20, max:50});
+        var amount = faker.random.number({min:0, max:1});
         var newBalance = balance + amount;
         var purchase =
           {
@@ -121,5 +121,3 @@ function recur(i, number){
 //   }
 //
 // }
-
-

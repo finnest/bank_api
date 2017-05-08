@@ -59,7 +59,16 @@ module.exports = {
 			.exec(function(err,transactions){
 				if (err) return next(err);
 
-				res.json(transactions);
+				Transfer.find({recipientNumber: account.number})
+					.exec(function(err,transfers){
+						if (err) return next(err);
+
+						res.json({
+							transfers: transfers,
+							transactions: transactions
+						});
+					});
+
 			})
 		});
 	},
