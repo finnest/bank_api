@@ -33,7 +33,8 @@ module.exports = {
 					resData.push({
 						type: account.type,
 						number: account.number.slice(-4),
-						balance: account.balance
+						balance: account.balance,
+						holderName: account.holderName
 					});
 				});
 

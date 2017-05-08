@@ -68,23 +68,25 @@ module.exports = {
 		var from = req.body.from;
 		var amount = parseFloat(req.body.amount);
 
-		Account.findOne({email: from})
+		Account.findOne({email: from.email, holderName: from.name})
 			.then(function(sender) {
-				Account.findOne({email: to})
+				Account.findOne({email: to.email, holderName: to.name})
 					.then(function(recipient) {
 
 						Transfer.create({
-							from: from,
-							to: to,
+							fromEmail: sender.email,
+							fromName: sender.holderName,
+							toEmail: recipient.email,
+							toName: recipient.holderName,
 							amount: amount
 						})
 							.then(function(transfer) {
 								var updatedSenderBalance = sender.balance - amount;
 								var updatedRecipientBalance = recipient.balance + amount;
 
-								Account.update({email:from},{balance:updatedSenderBalance})
+								Account.update({email:sender.email,holderName:sender.holderName},{balance:updatedSenderBalance})
 								.then(function(updatedSender){
-									Account.update({email:to},{balance:updatedRecipientBalance})
+									Account.update({email:recipient.email,holderName:recipient.holderName},{balance:updatedRecipientBalance})
 									.then(function(updatedRecipient){
 										// notify Finnest API of updated account
 										// send updated[0] (account)

@@ -11,6 +11,9 @@ module.exports = {
     email: {
       type: 'string'
     },
+    holderName: {
+      type: 'string'
+    },
     number: {
       type: 'string'
     },
