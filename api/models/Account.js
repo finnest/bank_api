@@ -30,13 +30,5 @@ module.exports = {
       collection: 'debitCard',
       via: 'account'
     }
-  },
-
-  beforeCreate(params, cb) {
-    var randomAccountNum = Math.floor(100000000000 + Math.random() * 900000000000); // for seeding
-
-    params.number = params.number || randomAccountNum;
-
-    cb();
   }
 };
