@@ -20,6 +20,10 @@ module.exports = {
     },
     description: {
       type: 'string'
+    },
+
+    account: {
+      model: 'account'
     }
   }
 };

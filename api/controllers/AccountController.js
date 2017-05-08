@@ -44,7 +44,23 @@ module.exports = {
 	},
 
 	transactions: function(req, res, next) {
+		var email = req.param('email');
+		var holderName = req.param('holderName');
 
+		Account.findOne({
+			email: email,
+			holderName: holderName
+		})
+		.exec(function(err,account){
+			if (err) return next(err);
+
+			Transaction.find({ accountNumber: account.number })
+			.exec(function(err,transactions){
+				if (err) return next(err);
+
+				res.json(transactions);
+			})
+		});
 	}
 
 };

@@ -25,10 +25,15 @@ module.exports = {
       type: 'float',
       defaultsTo: 0.00
     },
-
+    transactions: {
+      collection: 'transactions'
+    },
     debitCards: {
       collection: 'debitCard',
       via: 'account'
+    },
+    transactions: {
+      collection: 'transaction'
     }
   }
 };
