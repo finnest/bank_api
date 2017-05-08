@@ -3,101 +3,85 @@
  * (sails.config.seeds)
  */
 
-var PARENT_CHECKING_BALANCE = 9876.54;
-var KID_CHECKING_BALANCE = 45.67;
-var KID_SAVINGS_BALANCE = 123.45;
-
 module.exports.seeds = {
   account: [
     {
-      email: 'xuan_cui@brown.edu',
-      holderName: 'Xuan Cui',
+      email: 'homer_simpson@duffmail.net',
+      holderName: 'Homer Simpson',
       type: 'CHECKING',
-      balance: PARENT_CHECKING_BALANCE
+      balance: 9876.54
     },
     {
-      email: 'xuan_cui@brown.edu',
-      holderName: 'Little Cui',
+      email: 'homer_simpson@duffmail.net',
+      holderName: 'Marge Simpson',
       type: 'CHECKING',
-      balance: KID_CHECKING_BALANCE
+      balance: 12876.54
     },
     {
-      email: 'xuan_cui@brown.edu',
-      holderName: 'Little Cui',
+      email: 'homer_simpson@duffmail.net',
+      holderName: 'Lisa Simpson',
+      type: 'CHECKING',
+      balance: 340.50
+    },
+    {
+      email: 'homer_simpson@duffmail.net',
+      holderName: 'Lisa Simpson',
       type: 'SAVINGS',
-      balance: KID_SAVINGS_BALANCE
+      balance: 1000.25
     },
     {
-      email: 'joe@joe.com',
-      holderName: 'Joseph Yoo',
+      email: 'homer_simpson@duffmail.net',
+      holderName: 'Bart Simpson',
       type: 'CHECKING',
-      balance: PARENT_CHECKING_BALANCE
+      balance: 73.91
     },
     {
-      email: 'joe@joe.com',
-      holderName: 'David Yoo',
-      type: 'CHECKING',
-      balance: KID_CHECKING_BALANCE
-    },
-    {
-      email: 'joe@joe.com',
-      holderName: 'David Yoo',
+      email: 'homer_simpson@duffmail.net',
+      holderName: 'Bart Simpson',
       type: 'SAVINGS',
-      balance: KID_SAVINGS_BALANCE
+      balance: 12.49
     },
     {
-      email: 'parent@parent.com',
-      holderName: 'Parent Last',
+      email: 'homer_simpson@duffmail.net',
+      holderName: 'Maggie Simpson',
       type: 'CHECKING',
-      balance: PARENT_CHECKING_BALANCE
+      balance: 10.00
     },
     {
-      email: 'parent@parent.com',
-      holderName: 'Kid Last',
-      type: 'CHECKING',
-      balance: KID_CHECKING_BALANCE
-    },
-    {
-      email: 'parent@parent.com',
-      holderName: 'Kid Last',
+      email: 'homer_simpson@duffmail.net',
+      holderName: 'Maggie Simpson',
       type: 'SAVINGS',
-      balance: KID_SAVINGS_BALANCE
-    },
+      balance: 60.00
+    }
   ],
   debitCard: [
     {
-      cardHolderName: 'Xuan Cui',
+      cardHolderName: 'Homer Simpson',
       cardNumber: '926415279483',
       cardExpirationMonth: 10,
       cardExpirationYear: 2020
     },
     {
-      cardHolderName: 'Little Cui',
+      cardHolderName: 'Marge Simpson',
       cardNumber: '383972514624',
       cardExpirationMonth: 10,
       cardExpirationYear: 2020
     },
     {
-      cardHolderName: 'Joseph Yoo',
+      cardHolderName: 'Lisa Simpson',
       cardNumber: '815394168372',
       cardExpirationMonth: 10,
       cardExpirationYear: 2020
     },
     {
-      cardHolderName: 'David Yoo',
+      cardHolderName: 'Bart Simpson',
       cardNumber: '273861493518',
       cardExpirationMonth: 10,
       cardExpirationYear: 2020
     },
     {
-      cardHolderName: 'Parent Last',
+      cardHolderName: 'Maggie Simpson',
       cardNumber: '192834623497',
-      cardExpirationMonth: 10,
-      cardExpirationYear: 2020
-    },
-    {
-      cardHolderName: 'Kid Last',
-      cardNumber: '794326438291',
       cardExpirationMonth: 10,
       cardExpirationYear: 2020
     }
