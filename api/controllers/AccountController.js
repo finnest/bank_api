@@ -55,6 +55,7 @@ module.exports = {
 			if (err) return next(err);
 
 			Transaction.find({ accountNumber: account.number })
+			.sort('createdAt ASC')
 			.exec(function(err,transactions){
 				if (err) return next(err);
 
