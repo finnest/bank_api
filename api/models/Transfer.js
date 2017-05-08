@@ -7,10 +7,8 @@
 
 module.exports = {
   attributes: {
-    fromEmail: { type: 'string' },
-    fromName: { type: 'string' },
-    toEmail: { type: 'string' },
-    toName: { type: 'string' },
+    senderNumber: { type: 'string' },
+    recipientNumber: { type: 'string' },
     amount: { type: 'float' },
     date: {type: 'datetime'}
   }
