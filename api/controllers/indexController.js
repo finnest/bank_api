@@ -11,5 +11,14 @@ module.exports = {
         });
       })
       .catch(function(err) { return next(err) });
+  },
+
+  allTransfers: function(req,res) {
+    Transfer.find()
+      .sort('createdAt ASC')
+      .then(function(transfers) {
+        res.json(transfers);
+      })
+      .catch(function(err){return next(err)});
   }
 }

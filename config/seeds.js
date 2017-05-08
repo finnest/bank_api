@@ -28,26 +28,36 @@ var kidAccountNums = [
   MAGGIE_SAVINGS_ACC_NUM
 ];
 
-// var transfers = [];
-// for (var i = 0; i < 25; i++) {
-//   var senderNum = faker.random.arrayElement(parentAccNums);
-//   var recipNum = faker.random.arrayElement(kidAccountNums);
-//   var amount = faker.finance.amount(1,20,1);
-//
-//   var date = null;
-//   if (i != 0) {
-//     date = generateDate(date);;
-//   };
-//
-//
-//
-//   transfers.push({
-//     senderNumber: senderNum,
-//     recipientNumber: recipNum,
-//     amount: amount,
-//     date: today.setDate(n)
-//   })
-// }
+var transfers = [];
+for (var i = 0; i < 70; i++) {
+  var senderNum = faker.random.arrayElement(parentAccNums);
+  var recipNum = faker.random.arrayElement(kidAccountNums);
+  var amount = faker.finance.amount(1,20,1);
+
+  var date = faker.date.between('2017-01-01', '2017-06-01');
+
+  transfers.push({
+    senderNumber: senderNum,
+    recipientNumber: recipNum,
+    amount: amount,
+    createdAt: date
+  });
+}
+
+for (var i = 0; i < 35; i++) {
+  var senderNum = faker.random.arrayElement(kidAccountNums);
+  var recipNum = faker.random.arrayElement(kidAccountNums);
+  var amount = faker.finance.amount(1,10,2);
+
+  var date = faker.date.between('2017-01-01', '2017-06-01');
+
+  transfers.push({
+    senderNumber: senderNum,
+    recipientNumber: recipNum,
+    amount: amount,
+    createdAt: date
+  });
+}
 
 module.exports.seeds = {
   account: [
@@ -140,9 +150,5 @@ module.exports.seeds = {
       cardExpirationYear: 2020
     }
   ],
-  transfer: [
-    {
-
-    }
-  ]
+  transfer: transfers
 }

@@ -62,6 +62,28 @@ module.exports = {
 				res.json(transactions);
 			})
 		});
+	},
+
+	transfers: function(req, res, next) {
+		// transfers for recipient/kid
+
+		var email = req.param('email');
+		var holderName = req.param('holderName');
+
+		Account.findOne({
+			email: email,
+			holderName: holderName
+		}).exec(function(err,account){
+			if (err) return next(err);
+
+			Transfer.find({recipientNumber: account.number})
+				.exec(function(err,transfers){
+					if (err) return next(err);
+
+					res.json(transfers);
+				});
+		})
+
 	}
 
 };
