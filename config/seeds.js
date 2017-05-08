@@ -23,14 +23,14 @@ module.exports.seeds = {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Lisa Simpson',
       type: 'CHECKING',
-      balance: 340.50,
+      balance: 150.50,
       number: '112737496656568'
     },
     {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Lisa Simpson',
       type: 'SAVINGS',
-      balance: 1000.25,
+      balance: 300.25,
       number: '470625158828918'
     },
     {
