@@ -3,6 +3,52 @@
  * (sails.config.seeds)
  */
 
+var faker = require('faker');
+
+var HOMER_CHECKING_ACC_NUM =  '642443064880855';
+var MARGE_CHECKING_ACC_NUM =  '752718289690772';
+var LISA_CHECKING_ACC_NUM =  '112737496656568';
+var LISA_SAVINGS_ACC_NUM =  '470625158828918';
+var BART_CHECKING_ACC_NUM =  '191817653410033';
+var BART_SAVINGS_ACC_NUM =  '308511982982083';
+var MAGGIE_CHECKING_ACC_NUM = '296418390621310';
+var MAGGIE_SAVINGS_ACC_NUM =  '545257371070699';
+
+var parentAccNums = [
+  HOMER_CHECKING_ACC_NUM,
+  MARGE_CHECKING_ACC_NUM
+]
+
+var kidAccountNums = [
+  LISA_CHECKING_ACC_NUM,
+  LISA_SAVINGS_ACC_NUM,
+  BART_CHECKING_ACC_NUM,
+  BART_SAVINGS_ACC_NUM,
+  MAGGIE_CHECKING_ACC_NUM,
+  MAGGIE_SAVINGS_ACC_NUM
+];
+
+// var transfers = [];
+// for (var i = 0; i < 25; i++) {
+//   var senderNum = faker.random.arrayElement(parentAccNums);
+//   var recipNum = faker.random.arrayElement(kidAccountNums);
+//   var amount = faker.finance.amount(1,20,1);
+//
+//   var date = null;
+//   if (i != 0) {
+//     date = generateDate(date);;
+//   };
+//
+//
+//
+//   transfers.push({
+//     senderNumber: senderNum,
+//     recipientNumber: recipNum,
+//     amount: amount,
+//     date: today.setDate(n)
+//   })
+// }
+
 module.exports.seeds = {
   account: [
     {
@@ -10,56 +56,56 @@ module.exports.seeds = {
       holderName: 'Homer Simpson',
       type: 'CHECKING',
       balance: 9876.54,
-      number: '642443064880855'
+      number: HOMER_CHECKING_ACC_NUM
     },
     {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Marge Simpson',
       type: 'CHECKING',
       balance: 12876.54,
-      number: '752718289690772'
+      number: MARGE_CHECKING_ACC_NUM
     },
     {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Lisa Simpson',
       type: 'CHECKING',
       balance: 150.50,
-      number: '112737496656568'
+      number: LISA_CHECKING_ACC_NUM
     },
     {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Lisa Simpson',
       type: 'SAVINGS',
       balance: 300.25,
-      number: '470625158828918'
+      number: LISA_SAVINGS_ACC_NUM
     },
     {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Bart Simpson',
       type: 'CHECKING',
       balance: 73.91,
-      number: '191817653410033'
+      number: BART_CHECKING_ACC_NUM
     },
     {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Bart Simpson',
       type: 'SAVINGS',
       balance: 12.49,
-      number: '308511982982083'
+      number: BART_SAVINGS_ACC_NUM
     },
     {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Maggie Simpson',
       type: 'CHECKING',
       balance: 10.00,
-      number: '296418390621310'
+      number: MAGGIE_CHECKING_ACC_NUM
     },
     {
       email: 'homer_simpson@duffmail.net',
       holderName: 'Maggie Simpson',
       type: 'SAVINGS',
       balance: 60.00,
-      number: '545257371070699'
+      number: MAGGIE_SAVINGS_ACC_NUM
     }
   ],
   debitCard: [
@@ -92,6 +138,11 @@ module.exports.seeds = {
       cardNumber: '192834623497',
       cardExpirationMonth: 10,
       cardExpirationYear: 2020
+    }
+  ],
+  transfer: [
+    {
+
     }
   ]
 }
