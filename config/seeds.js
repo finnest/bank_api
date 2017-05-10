@@ -29,7 +29,7 @@ var kidAccountNums = [
 ];
 
 var transfers = [];
-for (var i = 0; i < 70; i++) {
+for (var i = 0; i < 20; i++) {
   var senderNum = faker.random.arrayElement(parentAccNums);
   var recipNum = faker.random.arrayElement(kidAccountNums);
   var amount = faker.finance.amount(1,20,1);
@@ -44,10 +44,10 @@ for (var i = 0; i < 70; i++) {
   });
 }
 
-for (var i = 0; i < 35; i++) {
+for (var i = 0; i < 5; i++) {
   var senderNum = faker.random.arrayElement(kidAccountNums);
   var recipNum = faker.random.arrayElement(kidAccountNums);
-  var amount = faker.finance.amount(1,10,2);
+  var amount = faker.finance.amount(1,5,2);
 
   var date = faker.date.between('2017-01-01', '2017-06-01');
 
