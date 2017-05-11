@@ -2,7 +2,7 @@ module.exports = {
 	deposit: function(req, res, next) {
 		var email = req.body.email;
 		var amount = parseFloat(req.body.amount);
-		var description = req.body.description;
+		var description = req.body.description || "";
 
 		Account.findOne({email: email})
 			.then(function(account) {
